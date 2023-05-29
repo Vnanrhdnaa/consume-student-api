@@ -115,7 +115,7 @@ class StudentController extends Controller
     }
     public function permanent($id)
     {
-        $proses = (new BaseApi)->permanent('/api/students/trash/delete/permanent' .$id);
+        $proses = (new BaseApi)->permanent('/api/students/trash/delete/permanent/' .$id);
         if ($proses->failed()) {
             $errors = $proses->json('data');
             return redirect()->back()->with(['errors' => $errors]);
